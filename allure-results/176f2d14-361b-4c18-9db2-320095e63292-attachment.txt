@@ -1,0 +1,10 @@
+Monitoring network traffic for 24 seconds...
+m3u8 file detected: https://35bb3e39.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/VGl0YW4tZXNfRXVyb25ld3NTcGFuaXNoX0hMUw/dc4c5591-d644-406e-94fa-d3cf823b5705/4.m3u8 at 1737747739672
+Iteration 1: Total m3u8 files = 1
+m3u8 file detected: https://35bb3e39.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/VGl0YW4tZXNfRXVyb25ld3NTcGFuaXNoX0hMUw/dc4c5591-d644-406e-94fa-d3cf823b5705/4.m3u8 at 1737747745677
+Iteration 2: Total m3u8 files = 2
+m3u8 file detected: https://35bb3e39.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/VGl0YW4tZXNfRXVyb25ld3NTcGFuaXNoX0hMUw/dc4c5591-d644-406e-94fa-d3cf823b5705/4.m3u8 at 1737747751628
+Iteration 3: Total m3u8 files = 3
+m3u8 file detected: https://35bb3e39.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/VGl0YW4tZXNfRXVyb25ld3NTcGFuaXNoX0hMUw/dc4c5591-d644-406e-94fa-d3cf823b5705/4.m3u8 at 1737747757671
+Iteration 4: Total m3u8 files = 4
+m3u8 streaming files count increased as expected over time!
