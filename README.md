@@ -187,6 +187,23 @@ class HelperClass {
       await this.pressKeyWithDelay(key, delay);
     }
   }
+
+  async takeScreenshot(stepName, testInfo) {
+    const screenshotsDir = path.join(__dirname, '../../screenshots');
+    if (!fs.existsSync(screenshotsDir)) {
+      fs.mkdirSync(screenshotsDir, { recursive: true });
+    }
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const screenshotPath = `${screenshotsDir}/${stepName}-${timestamp}.png`;
+  
+    await this.page.screenshot({ path: screenshotPath });
+  
+    // Attach the screenshot to the Playwright test report
+    await testInfo.attach(stepName, {
+      path: screenshotPath,
+      contentType: 'image/png',
+    });
+  }
 }
 
 module.exports = HelperClass;
@@ -206,7 +223,7 @@ Key settings:
 #### Example Configuration:
 ```javascript
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src/tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
