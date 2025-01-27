@@ -5,3 +5,5 @@ node_modules/
 /playwright/.cache/
 screenshots/*.png
 allure-results/
+*.png
+/playwright-report/
