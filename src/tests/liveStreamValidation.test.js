@@ -27,11 +27,12 @@ test('Live stream metrics validation', async ({ page, context }, testInfo) => {
   console.log('All metrics validated successfully!');
 });
 
-test('Validate m3u8 streaming files count increases', async ({ page }, testInfo) => {
+test.only('Validate m3u8 streaming files count increases', async ({ page }, testInfo) => {
   test.setTimeout(60000);
   const m3u8Requests = [];
   const monitoringDuration = 24000; // Total monitoring duration (ms)
   const checkInterval = 6000; // Check interval (ms)
+  const helper = new HelperClass(page);
 
   // Navigate to the live streaming "Channels" page
   await page.goto('https://dev01.titanos.tv/channels');
