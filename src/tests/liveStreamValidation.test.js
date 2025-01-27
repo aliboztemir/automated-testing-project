@@ -27,7 +27,7 @@ test('Live stream metrics validation', async ({ page, context }, testInfo) => {
   console.log('All metrics validated successfully!');
 });
 
-test.only('Validate m3u8 streaming files count increases', async ({ page }, testInfo) => {
+test('Validate m3u8 streaming files count increases', async ({ page }, testInfo) => {
   test.setTimeout(60000);
   const m3u8Requests = [];
   const monitoringDuration = 24000; // Total monitoring duration (ms)
