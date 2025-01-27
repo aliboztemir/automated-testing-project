@@ -1,0 +1,12 @@
+Navigating to Search Box...
+Navigating with key: ArrowUp and delay: 1000ms
+Pressing key: ArrowUp and waiting for 1000ms
+Search Box page loaded.
+Navigating with key: ArrowUp and delay: 1000ms
+Pressing key: ArrowUp and waiting for 1000ms
+Navigating to the first category...
+Pressing key: ArrowDown and waiting for 500ms
+Navigating with key: ArrowLeft and delay: 1000ms
+Pressing key: ArrowLeft and waiting for 1000ms
+Navigating with key: Enter and delay: 1000ms
+Pressing key: Enter and waiting for 1000ms

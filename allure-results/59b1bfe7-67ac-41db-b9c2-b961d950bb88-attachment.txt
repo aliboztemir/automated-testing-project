@@ -1,0 +1,18 @@
+Navigating to the Channels menu...
+Channels menu is highlighted.
+Switching to the new tab...
+Waiting for the Channels page to load...
+Channels page successfully loaded.
+Validating live stream metrics...
+Resolution: Resolution: 1280x720
+Estimated Bandwidth: Estimated bandwidth: 58.9 Mbps
+Stream Bandwidth: Stream bandwidth: 3.6 Mbps
+Buffering Time: Buffering time: 0.52s
+Stalls Detected: Stalls detected: 0
+Dropped Frames: Dropped frames: 0
+Current State: Current state: playing
+Validating Current Time metric...
+Initial Current Time: 7.25
+Updated Current Time: 12.24
+Current Time is increasing as expected!
+All metrics validated successfully!

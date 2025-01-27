@@ -29,7 +29,7 @@ class AppsPage {
                 addedTestId = testId; // Store the newly added app's testId
             } else {
                 console.log(`"${testId}" is already in favourites. Moving to the next app...`);
-                await this.page.keyboard.press('ArrowRight');
+                this.helper.pressKeyWithDelay('ArrowRight', 500);
             }
             await this.page.waitForTimeout(500);
         }

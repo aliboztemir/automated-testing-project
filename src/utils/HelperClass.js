@@ -25,10 +25,9 @@ class HelperClass {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const screenshotPath = `${screenshotsDir}/${stepName}-${timestamp}.png`;
   
-    // Ekran görüntüsünü kaydet
     await this.page.screenshot({ path: screenshotPath });
   
-    // Playwright raporuna ekle
+    // Attach the screenshot to the Playwright test report
     await testInfo.attach(stepName, {
       path: screenshotPath,
       contentType: 'image/png',

@@ -10,7 +10,7 @@ class SearchPage {
 
     async navigateToFirstCategory() {
         console.log('Navigating to the first category...');
-        await this.helper.pressKeyWithDelay('ArrowDown');
+        await this.helper.pressKeyWithDelay('ArrowDown', 500);
     }
 
     async getFocusedCategoryName() {

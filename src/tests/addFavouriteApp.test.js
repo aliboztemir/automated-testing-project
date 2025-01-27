@@ -3,7 +3,7 @@ const HomePage = require('../pages/HomePage');
 const AppsPage = require('../pages/AppsPage');
 const HelperClass = require('../utils/HelperClass.js'); 
 
-test.only('Navigate to Apps menu and add a favourite app', async ({ page }, testInfo) => {
+test('Navigate to Apps menu and add a favourite app', async ({ page }, testInfo) => {
   const homePage = new HomePage(page);
   const appsPage = new AppsPage(page);
   const helper = new HelperClass(page);
@@ -18,10 +18,11 @@ test.only('Navigate to Apps menu and add a favourite app', async ({ page }, test
 
   // Step 3: Navigate to the Apps menu
   await homePage.navigateToAppsMenu();
-  await helper.takeScreenshot('navigate To Apps Menu', testInfo);
+  await helper.takeScreenshot('navigate-apps-menu', testInfo);
 
   // Step 4: Navigate to the Video Apps section
   await appsPage.navigateToVideoApps();
+  await helper.takeScreenshot('navigate-videos-section', testInfo);
 
   // Step 5: Add the first app that is not already in favourites
   const newAppTestId = await appsPage.addFirstUnfavouriteApp(filteredTestIds);
@@ -35,6 +36,7 @@ test.only('Navigate to Apps menu and add a favourite app', async ({ page }, test
   // Step 6: Confirm the app is added
   await appsPage.confirmAppAdded();
   await homePage.waitVisibleFavoriteApps();
+  await helper.takeScreenshot('confirm-app-added', testInfo);
 
   // Step 7: Verify the app is in the favourites list
   const newFilteredTestIds = await homePage.getFavouriteAppsTestIds();

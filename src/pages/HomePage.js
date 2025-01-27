@@ -36,7 +36,7 @@ class HomePage {
         try {
             await this.page.waitForSelector('#favourite-apps', {
                 state: 'visible',
-                timeout: 2000,
+                timeout: 3000,
             });
             console.log('Favourite Apps are visible.');
         } catch (error) {
@@ -67,12 +67,10 @@ class HomePage {
 
     async deleteFocusedApp() {
         console.log('Navigating to the delete icon...');
-        await this.page.keyboard.press('ArrowDown');
-        await this.page.waitForTimeout(500);
+        this.helper.pressKeyWithDelay('ArrowDown', 500);
 
         console.log('Confirming delete...');
-        await this.page.keyboard.press('Enter');
-        await this.page.waitForTimeout(2000); // Wait for delete operation
+        this.helper.pressKeyWithDelay('Enter', 2000);
     }
 
     async verifyAppDeleted(appTestId) {

@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
 const HomePage = require('../pages/HomePage');
 const ChannelsPage = require('../pages/ChannelsPage');
+const HelperClass = require('../utils/HelperClass.js');
 
-test('Live stream metrics validation', async ({ page, context }) => {
+test('Live stream metrics validation', async ({ page, context }, testInfo) => {
   const homePage = new HomePage(page);
 
   // 1. Navigate to the Titanos TV homepage
@@ -26,7 +27,7 @@ test('Live stream metrics validation', async ({ page, context }) => {
   console.log('All metrics validated successfully!');
 });
 
-test('Validate m3u8 streaming files count increases', async ({ page }) => {
+test('Validate m3u8 streaming files count increases', async ({ page }, testInfo) => {
   test.setTimeout(60000);
   const m3u8Requests = [];
   const monitoringDuration = 24000; // Total monitoring duration (ms)
@@ -35,6 +36,7 @@ test('Validate m3u8 streaming files count increases', async ({ page }) => {
   // Navigate to the live streaming "Channels" page
   await page.goto('https://dev01.titanos.tv/channels');
   await page.waitForLoadState('networkidle');
+  await helper.takeScreenshot('channelspage-loaded', testInfo);
 
   // Listen for network requests containing '.m3u8'
   page.on('request', (request) => {

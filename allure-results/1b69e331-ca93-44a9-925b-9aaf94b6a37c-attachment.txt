@@ -1,0 +1,4 @@
+Error in navigateWithSteps: keyboard.press: key: expected string, got undefined
+    at HelperClass.navigateSequence (C:\Users\ali.boztemir\automated-testing-project\src\utils\HelperClass.js:28:34)
+    at HomePage.navigateToSearchBox (C:\Users\ali.boztemir\automated-testing-project\src\pages\HomePage.js:88:21)
+    at C:\Users\ali.boztemir\automated-testing-project\src\tests\searchBox.test.js:16:20

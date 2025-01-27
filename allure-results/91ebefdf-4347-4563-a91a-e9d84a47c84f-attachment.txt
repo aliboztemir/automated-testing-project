@@ -1,0 +1,7 @@
+Navigating to Search Box...
+Navigating with key: ArrowUp
+Search Box page loaded.
+Navigating with key: ArrowUp
+Navigating to the first category...
+Navigating with key: ArrowLeft
+Navigating with key: Enter
