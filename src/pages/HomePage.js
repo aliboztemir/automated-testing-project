@@ -1,5 +1,5 @@
 const { expect } = require('@playwright/test');
-const HelperClass = require('../utils/HelperClass'); 
+const HelperClass = require('../utils/HelperClass');
 
 class HomePage {
     constructor(page) {
@@ -27,7 +27,7 @@ class HomePage {
         console.log('Navigating to Apps menu...');
         const navigationSequence = ['ArrowUp', 'ArrowUp', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter'];
         await this.helper.navigateSequence(navigationSequence);
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForSelector('[data-testid="mini-banner"]', { state: 'visible', timeout: 3000 });
         console.log('Apps page loaded..');
     }
 
