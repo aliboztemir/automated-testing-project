@@ -3,7 +3,7 @@ const HomePage = require('../pages/HomePage');
 const ChannelsPage = require('../pages/ChannelsPage');
 const HelperClass = require('../utils/HelperClass.js');
 
-test('Live stream metrics validation', async ({ page, context }, testInfo) => {
+test.only('Live stream metrics validation', async ({ page, context }, testInfo) => {
   const homePage = new HomePage(page);
 
   // 1. Navigate to the Titanos TV homepage
