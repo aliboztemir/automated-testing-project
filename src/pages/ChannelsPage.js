@@ -4,34 +4,27 @@ class ChannelsPage {
     constructor(newPage) {
         this.newPage = newPage;
         this.metricsContainer = newPage.locator('#root > div:nth-child(6) > div');
-        this.currentStateLocator = this.metricsContainer.locator('text=Current state');
     }
 
     async waitForChannelsPageLoad() {
-        console.log('Waiting for the Channels page to load...');
-        await this.newPage.waitForLoadState('domcontentloaded');
+      console.log('Waiting for the Channels page to load...');
 
-        try {
-            // Wait for the element containing "Current state: playing"
-            await this.newPage.waitForFunction(
-                (selector) => {
-                    const container = document.querySelector(selector); // Use the passed selector
-                    if (container) {
-                        const textContent = container.innerText || container.textContent;
-                        return /Current state:\s*playing/i.test(textContent); // Regex to match "Current state: playing"
-                    }
-                    return false;
-                },
-                '#root > div:nth-child(6) > div', // Pass the selector for the metrics container
-                { timeout: 10000 } // Timeout after 10 seconds
-            );
+      try {
+          // Wait for the element containing "Current state: playing"
+          await this.newPage.waitForFunction(
+              () => {
+                  const elements = document.querySelectorAll('div'); // Select all divs
+                  return Array.from(elements).some((el) => el.innerText.includes('Current state: playing'));
+              },
+              { timeout: 10000 } // Timeout after 10 seconds
+          );
 
-            console.log('Channels page successfully loaded.');
-        } catch (error) {
-            console.error('Error: Live stream did not start within the timeout period.');
-            throw new Error('Live stream did not start within the timeout period.');
-        }
-    }
+          console.log('Channels page successfully loaded and live stream started.');
+      } catch (error) {
+          console.error('Error: Live stream did not start within the timeout period.');
+          throw new Error('Live stream did not start within the timeout period.');
+      }
+  }
 
     async validateMetrics() {
         console.log('Validating live stream metrics...');
